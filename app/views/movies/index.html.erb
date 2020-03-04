@@ -1,0 +1,9 @@
+<h1>Buy Movie Tickets Here!</h1>
+
+<%@movies.each do |movie|%>
+<%=link_to movie.name, movie_path(movie)%>
+<br>
+<%end%>
+
+
+

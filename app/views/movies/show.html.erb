@@ -1,0 +1,10 @@
+<h1>Purchase Tickets Here</h1>
+
+  <%= @movie.name %> 
+  <%= @movie.director %>
+  <%= @movie.description %>
+  <%= @movie.price %>
+  <br>
+  <br>
+
+<%= link_to "Click Here to Purchase Tickets", {:action => 'new' } %>
