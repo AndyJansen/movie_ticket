@@ -2,8 +2,15 @@
 
 <%@movies.each do |movie|%>
 <%=link_to movie.name, movie_path(movie)%>
+<%= link_to 'Destroy', movie_path(movie),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
 <br>
+
 <%end%>
+<br>
+ 
+<%= link_to 'Add a New Movie', new_movie_path %>
 
 
 
