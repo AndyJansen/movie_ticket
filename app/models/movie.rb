@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-  # has_many :tickets, foreign_key: name
+  has_many :tickets
 end
