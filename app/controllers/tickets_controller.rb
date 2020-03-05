@@ -3,8 +3,8 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all
   end
 
-  def show
-    @ticket = Ticket.find(params[:id])
+  def show   
+     @ticket = Ticket.find(params[:id])
   end
 
   def create
