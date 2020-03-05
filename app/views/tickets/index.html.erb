@@ -4,8 +4,7 @@
 <%= form_for :ticket, url: tickets_path do |f| %>
 
     <%= f.label :name %><br>
-    <% options = options_from_collection_for_select(@tickets, 'id', 'name') %>
-    <%= f.select :all_val,  options %>
+    <%= f.collection_select :movie_id, Movie.order(:name),:id,:name, include_blank: true %>  
     <%= f.label :number  %><br>
     <%= f.select :number, [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], :prompt => 'Select One' %><br>
     <%= f.label :card_number  %><br>
