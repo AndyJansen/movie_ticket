@@ -28,5 +28,6 @@ Movie.create!([{
 Ticket.create! ([{
   name: "Ant-Man",
   number: 3,
-  cost: 15
+  cost: 15,
+  card_number: 123456789
 }])
