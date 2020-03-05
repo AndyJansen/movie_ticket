@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'tickets/index'
   resources :movies
+  resources :tickets
 
 
   root 'movies#index'

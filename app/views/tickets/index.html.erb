@@ -1,10 +1,19 @@
-<h1>Tickets Purchase Info</h1>
-<p>This is where ticket purchase will start</p>
-<h3>create form that has:</h3>
-<p>drop down to select movie</p>
-<p>show individual ticket price</p>
-<p>drop down to select number of tickets to buy</p>
-<p>show total price</p>
+<h1> Tickets Purchase Info </h1>
+
+
+<%= form_for :ticket, url: tickets_path do |f| %>
+
+    <%= f.label :name %><br>
+    <% options = options_from_collection_for_select(@tickets, 'id', 'name') %>
+    <%= f.select :all_val,  options %>
+    <%= f.label :number  %><br>
+    <%= f.select :number, [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], :prompt => 'Select One' %><br>
+    <%= f.label :card_number  %><br>
+    <%= f.text_field :card_number %><br>
+
+    <%= f.submit "Purchase Tickets" %>
+<% end %>
+
 
 
 
