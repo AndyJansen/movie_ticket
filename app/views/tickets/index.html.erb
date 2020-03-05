@@ -1,18 +1,24 @@
-<h1> Tickets Purchase Info </h1>
 
-
-<%= form_for :ticket, url: tickets_path do |f| %>
-
-    <%= f.label :name %><br>
-    <%= f.collection_select :movie_id, Movie.order(:name),:id,:name, include_blank: true %>  
-    <%= f.label :number  %><br>
-    <%= f.select :number, [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], :prompt => 'Select One' %><br>
-    <%= f.label :card_number  %><br>
-    <%= f.text_field :card_number %><br>
-
-    <%= f.submit "Purchase Tickets" %>
-<% end %>
-
+<h1>Listing Tickets</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.name %></td>
+      <td><%= ticket.cost %></td>
+      <td><%= link_to 'Show', ticket_path(ticket) %></td>
+      <td><%= link_to 'Destroy', ticket_path(ticket),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
 
 
 
