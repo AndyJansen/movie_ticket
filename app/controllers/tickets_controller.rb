@@ -5,6 +5,8 @@ class TicketsController < ApplicationController
 
   def show   
     @ticket = Ticket.find(params[:id])
+    @title = @ticket.title
+    @tcost = @ticket.cost
   end
 
   def new
