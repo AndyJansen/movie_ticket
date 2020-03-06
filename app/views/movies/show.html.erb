@@ -1,9 +1,13 @@
 <h1>Purchase Tickets Here</h1>
 
-  <%= @movie.name %> 
-  <%= @movie.director %>
-  <%= @movie.description %>
-  <%= @movie.price %>
+  <strong>Title:</strong>
+  <%= @movie.name %><br>
+  <strong>Director:</strong>
+  <%= @movie.director %><br>
+  <strong>Description:</strong>
+  <%= @movie.description %><br>
+  <strong>Price:</strong>
+  <%= number_to_currency(@movie.price) %>
   <br>
   <br>
 
