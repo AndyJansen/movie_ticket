@@ -14,20 +14,19 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
 
-    @ticket.save
+    @ticket.save!
     redirect_to @ticket
   end
 
-
-def destroy
-  @ticket = Ticket.find(params[:id])
-  @ticket.destroy
- 
-  redirect_to tickets_path
-end
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+  
+    redirect_to tickets_path
+  end
 
   private
   def ticket_params
-    params.require(:ticket).permit(:name, :number, :cost, :card_number)
+    params.require(:ticket).permit( :movie_id, :name, :number, :cost, :card_number)
   end
 end
