@@ -4,13 +4,17 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Number</th>
     <th>Cost</th>
     <th></th>
   </tr>
+
+  <p>
  
   <% @tickets.each do |ticket| %>
     <tr>
       <td><%= ticket.name %></td>
+      <td><%= ticket.number %></td>
       <td><%= ticket.cost %></td>
       <td><%= link_to 'Show', ticket_path(ticket) %></td>
       <td><%= link_to 'Destroy', ticket_path(ticket),
@@ -19,7 +23,6 @@
     </tr>
   <% end %>
 </table>
-
 
 
 
