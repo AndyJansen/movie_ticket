@@ -1,5 +1,7 @@
 class Ticket < ApplicationRecord
   belongs_to :movie
+
+  validates :card_number, numericality: { only_integer: true }
   before_save :ticket_cost
 
   def ticket_name
@@ -25,6 +27,7 @@ class Ticket < ApplicationRecord
   def ticket_cost
     self.cost = self.movie.price * self.number
   end
+
 
 end
 

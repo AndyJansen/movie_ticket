@@ -8,7 +8,7 @@
     <%= f.label :number  %><br>
     <%= f.select :number, [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ], :prompt => 'Select One' %><br>
     <%= f.label :card_number  %><br>
-    <%= f.text_field :card_number %><br>
-
+    <%= f.text_field :card_number, size: 30%><br>
+    
     <%= f.submit "Purchase Tickets" %>
 <% end %>
