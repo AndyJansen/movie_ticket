@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to movietickets.com, </h1>
+    <p>Here is your movie ticket:
+    <p>Name: <%= @ticket.title%></p>
+    <p>Number of Tickets: <%= @ticket.number%></p>
+    <p>Cost: <%= @ticket.cost * @ticket.number%></p>
+
+   
+  </body>
+</html>
