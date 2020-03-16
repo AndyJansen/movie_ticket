@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :redirect_user, only: [:destroy]
   def index
     @movies = Movie.all
   end
@@ -28,5 +29,9 @@ class MoviesController < ApplicationController
   private
   def movie_params
     params.require(:movie).permit(:name, :director, :description, :price)
+  end
+
+  def redirect_user
+    redirect_to root_path
   end
 end
